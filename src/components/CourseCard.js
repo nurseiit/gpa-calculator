@@ -1,5 +1,5 @@
-import React from 'react';
-import { Button, Card, Select } from 'antd';
+import React from "react";
+import { Button, Card, Select } from "antd";
 
 const Option = Select.Option;
 
@@ -8,11 +8,11 @@ const CourseCard = props => {
     return null;
   }
 
-  const handleGPAChange = (value) => {
+  const handleGPAChange = value => {
     props.updateCourseGPA(props.index, value);
   };
 
-  const handleCreditsChange = (value) => {
+  const handleCreditsChange = value => {
     props.updateCourseCredits(props.index, value);
   };
 
@@ -21,32 +21,44 @@ const CourseCard = props => {
       style={{ marginTop: 16 }}
       type="inner"
       title={`Course ${props.realIndex}`}
-      extra={<Button onClick={() => props.deleteCourse(props.index)} type="danger" icon="delete"></Button>}
+      extra={
+        <Button
+          onClick={() => props.deleteCourse(props.index)}
+          type="danger"
+          icon="delete"
+        />
+      }
     >
       <Select
         style={{ width: 100 }}
         placeholder="Grade"
         optionFilterProp="children"
-        filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
+        filterOption={(input, option) =>
+          option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+        }
         onChange={handleGPAChange}
       >
+        <Option value={4.3}>A+</Option>
         <Option value={4.0}>A</Option>
-        <Option value={3.67}>A-</Option>
-        <Option value={3.33}>B+</Option>
+        <Option value={3.7}>A-</Option>
+        <Option value={3.3}>B+</Option>
         <Option value={3.0}>B</Option>
-        <Option value={2.67}>B-</Option>
-        <Option value={2.33}>C+</Option>
+        <Option value={2.7}>B-</Option>
+        <Option value={2.3}>C+</Option>
         <Option value={2.0}>C</Option>
-        <Option value={1.67}>C-</Option>
-        <Option value={1.33}>D+</Option>
+        <Option value={1.7}>C-</Option>
+        <Option value={1.3}>D+</Option>
         <Option value={1.0}>D</Option>
-        <Option value={0.00}>F</Option>
+        <Option value={0.7}>D-</Option>
+        <Option value={0.0}>F</Option>
       </Select>
       <Select
         style={{ width: 100 }}
         placeholder="Credits"
         optionFilterProp="children"
-        filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
+        filterOption={(input, option) =>
+          option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+        }
         className="inputCredits"
         onChange={handleCreditsChange}
       >
@@ -61,6 +73,6 @@ const CourseCard = props => {
       </Select>
     </Card>
   );
-}
+};
 
 export default CourseCard;
