@@ -1,14 +1,14 @@
 {
   "name": "gpa-calculator",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
-  "homepage": "https://ironsoul0.github.io/gpa-calculator",
+  "homepage": "https://devnur.me/gpa-calculator",
   "dependencies": {
-    "antd": "^3.11.2",
-    "gh-pages": "^2.0.1",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
+    "antd": "^3.24.2",
+    "gh-pages": "^2.1.1",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-scripts": "^3.2.0"
   },
   "scripts": {
     "predeploy": "yarn run build",
